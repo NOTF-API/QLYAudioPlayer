@@ -4,7 +4,7 @@
 
 网页音乐播放器，包含歌词显示，频谱图效果等功能,
 
-Demo:https://notf-api.github.io/audio-player-demo/index.html
+Demo:https://notf-api.github.io/QLYAudioPlayer-Demo/index.html
 
 版本:v0.5.4 更新日期:2021/9/2
 
