@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    user-select: none;
     -webkit-user-drag: none;
     box-sizing: border-box;
 }
@@ -16,108 +15,10 @@ body{
     overflow: hidden;
 }
 
-.loading::before{
-    content: "\f110";
-    font-family: "FontAwesome", serif;
-    display: inline-block;
-    z-index: 2;
-    background: inherit;
-    font-size: 1.4em;
-    padding: inherit;
-    -webkit-animation: loading 1s step-start;
-    -webkit-animation-iteration-count: infinite;///播放动画次数，infinite表示循环播放
-}
-
-@keyframes loading {
-    0%{
-        transform: rotate(0deg);
-        transform-origin: center;///旋转的基点位置，center表示从中间开始旋转
-    }
-    11%{
-        transform: rotate(40deg);
-        transform-origin: center;
-    }
-    22%{
-        transform: rotate(80deg);
-        transform-origin: center;
-    }
-    33%{
-        transform: rotate(120deg);
-        transform-origin: center;
-    }
-    44%{
-        transform: rotate(160deg);
-        transform-origin: center;
-    }
-    55%{
-        transform: rotate(200deg);
-        transform-origin: center;
-    }
-    66%{
-        transform: rotate(240deg);
-        transform-origin: center;
-    }
-    77%{
-        transform: rotate(280deg);
-        transform-origin: center;
-    }
-    88%{
-        transform: rotate(320deg);
-        transform-origin: center;
-    }
-    100%{
-        transform: rotate(360deg);
-        transform-origin: center;
-    }
-}
-@-webkit-keyframes loading {
-    0%{
-        -webkit-transform: rotate(0deg);
-        -webkit-transform-origin: center;
-    }
-    11%{
-        -webkit-transform: rotate(40deg);
-        -webkit-transform-origin: center;
-    }
-    22%{
-        -webkit-transform: rotate(80deg);
-        -webkit-transform-origin: center;
-    }
-    33%{
-        -webkit-transform: rotate(120deg);
-        -webkit-transform-origin: center;
-    }
-    44%{
-        -webkit-transform: rotate(160deg);
-        -webkit-transform-origin: center;
-    }
-    55%{
-        -webkit-transform: rotate(200deg);
-        -webkit-transform-origin: center;
-    }
-    66%{
-        -webkit-transform: rotate(240deg);
-        -webkit-transform-origin: center;
-    }
-    77%{
-        -webkit-transform: rotate(280deg);
-        -webkit-transform-origin: center;
-    }
-    88%{
-        -webkit-transform: rotate(320deg);
-        -webkit-transform-origin: center;
-    }
-    100%{
-        -webkit-transform: rotate(360deg);
-        -webkit-transform-origin: center;
-    }
-}
-
 #app{
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
-    min-width:1600px;
-    min-height: 900px;
 }
 
 #background{
