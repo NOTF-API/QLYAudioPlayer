@@ -3,70 +3,71 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>音乐播放器ver0.5.4</title>
+    <title>音乐播放器ver1.0.0</title>
     <meta name="description" content="无框架编写的个性化音乐播放器">
-    <meta name="keywords" content="音乐播放器,Web开发,html,在线播放">
+    <meta name="keywords" content="音乐播放器,Web开发,html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <script src="js/index.js" type="module"></script>
 </head>
 
-<body oncontextmenu="self.event.returnValue=false">
+<body>
     <div id="app">
-        <div id="background"></div>
-        <audio src="" id="playerAudio"></audio>
+        <div class="background">
+            <img id="bg-img">
+        </div>
         <div class="header">
-            <button class="secondary-button" id="expandButton"><i class="fa fa-expand" aria-hidden="true"></i></button>
             <div class="information">
-                <h1 id="title"></h1>
-                <i id="description"></i>
-                <p>
-                    <span id="artist"></span>
-                    -
-                    <span id="album"></span>
-                </p>
+                <div id="inf-title" class="title overflow"></div>
+                <div id="inf-desc" class="description overflow"></div>
+                <div id="inf-art" class="artist-album overflow"></div>
             </div>
-            <button class="secondary-button" id="closeButton"><i class="fa fa-close" aria-hidden="true"></i></button>
+            <div class="controls">
+                <button id="fullscreen-btn" class="fa fa-expand"></button>
+                <!-- <button id="fullscreen-btn" class="fa fa-compress"></button> -->
+            </div>
+        </div>
+        <div class="aside hidden">
+            <button id="aside-toggle-btn" class="aside-toggle-btn fa fa-list"></button>
+            <div class="list-container">
+                <div class="header">当前播放</div>
+                <ul class="list" id="list">
+                </ul>
+            </div>
+        </div>
+        <div class="loading-mask">
+            <div class="loading-box">
+                <span class="loading-text">抱歉,您的浏览器不支持ES6</span>
+                <i class="fa fa-warning" id="smart-icon" aria-hidden="true"></i>
+            </div>
         </div>
         <div class="main">
-            <div class="middle">
-                <div id="disk">
-                    <img src="image/singlecover.png" alt="disk" class="diskImage">
+            <canvas id="spectrum" class="spectrum"></canvas>
+            <div class="disk-container hidden">
+                <div class="disk">
+                    <img src="assets/disk-edge.png" alt="disk" class="disk-edge">
+                    <img alt="cover" class="cover" id="cover">
                 </div>
-                <div class="spectrumContainer">
-                    <canvas id="spectrum" width="600px" height="1000px"></canvas>
-                </div>
-                <div class="lyricContainer">
-                    <div id="lyric" class="active"></div>
-                </div>
+            </div>
+            <div class="lyric-container hidden">
+                <div id="lyric" class="active lyric overflow">123</div>
+            </div>
+            <div class="time">
+                <span class="current">00:00.00</span>
+                <span class="total">00:00.00</span>
             </div>
         </div>
-        <div id="progress"></div>
         <div class="footer">
-            <div id="currentTime">00:00.00</div>
+            <div class="progress" id="progress"></div>
             <div class="main-buttons">
-                <button class="secondary-button" id="playModeButton"><i class="fa fa-random"
-                        aria-hidden="true"></i></button>
-                <button class="secondary-button" id="FXToggleButton">FX</button>
-                <button class="main-button" id="lastButton"><i class="fa fa-step-backward"
-                        aria-hidden="true"></i></button>
-                <button class="main-button" id="playPauseButton"><i class="fa fa-play" aria-hidden="true"></i></button>
-                <button class="main-button" id="nextButton"><i class="fa fa-step-forward"
-                        aria-hidden="true"></i></button>
-                <button class="secondary-button active" id="lyricToggleButton">词</button>
-                <label>
-                    <input type="range" max="100" min="0" step="1" value="100" class="secondary-button"
-                        onclick="player.volume=this.value">
-                </label>
+                <button id="mode-btn" class="lite fa fa-list-ol"></button>
+                <button id="prev-btn" class="fa fa-step-backward"></button>
+                <button id="play-btn" class="fa fa-play"></button>
+                <button id="next-btn" class="fa fa-step-forward"></button>
+                <button id="lyric-btn" class="lite">词</button>
             </div>
-            <div id="totalTime">00:00.00</div>
         </div>
     </div>
 </body>
-<script src="js/util.js"></script>
-<script src="js/demoPlayList.js"></script>
-<script src="js/player.js"></script>
-<script src="js/spectrum.js"></script>
-
 </html>

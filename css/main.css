@@ -1,0 +1,189 @@
+.main {
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 5rem;
+}
+
+.spectrum {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+}
+
+.disk-container {
+    position: absolute;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disk-container.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .disk {
+        width: 80%;
+        padding-bottom: 80%;
+    }
+
+    .spectrum {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+    .disk {
+        width: 60%;
+        padding-bottom: 60%;
+    }
+
+    .spectrum {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .disk {
+        width: 50%;
+        padding-bottom: 50%;
+    }
+
+    .spectrum {
+        display: none;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width: 1199px) {
+    .disk {
+        width: 40%;
+        padding-bottom: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .disk {
+        width: 30%;
+        padding-bottom: 30%;
+    }
+}
+
+.disk {
+    height: 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 4;
+}
+
+.disk>.disk-edge {
+    z-index: 3;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.disk>.cover {
+    z-index: 2;
+    background-color: #ececec;
+    position: absolute;
+    width: 64%;
+    height: 64%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    color: #a1a1a1;
+    position: absolute;
+    bottom: .375rem;
+    height: 1rem;
+    width: 100%;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 1rem;
+    padding: 0 .25rem;
+}
+
+.time>.current {
+    float: left;
+}
+
+.time>.total {
+    float: right;
+}
+
+.lyric-container {
+    padding: 0 1rem;
+    position: absolute;
+    bottom: 1.375rem;
+    height: 3rem;
+    line-height: 3rem;
+    cursor: default;
+    user-select: none;
+    text-align: center;
+    color: #a1a1a1;
+    width: 100%;
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ff00006b; */
+}
+
+.lyric-container.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    .lyric-container {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+    .lyric-container {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .lyric-container {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width: 1199px) {
+    .lyric-container {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .lyric-container {
+        font-size: 2rem;
+    }
+}
+
+.lyric {
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    line-height: 2.5rem;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.lyric.active {
+    opacity: 100%;
+    transition: opacity 1s;
+}

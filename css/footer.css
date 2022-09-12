@@ -1,0 +1,57 @@
+.footer {
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    background-color: var(--footer-bg-color);
+}
+
+.progress {
+    cursor: pointer;
+    position: absolute;
+    top: -0.375rem;
+    left: 0;
+    width: 100%;
+    bottom: 5rem;
+    height: .375rem;
+    background-color: var(--progress-inactive-color);
+}
+
+.main-buttons {
+    width: 100%;
+    text-align: center;
+}
+
+.main-buttons button {
+    margin: 0 .25rem;
+    width: 5rem;
+    height: 3rem;
+    background-color: #2d2d2d;
+    border: none;
+    border-radius: .3125rem;
+    color: #fbfbfb;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.main-buttons button.lite {
+    width: 1.5rem;
+    height: 3rem;
+    background: none;
+}
+
+.main-buttons button:hover {
+    filter: brightness(1.2);
+}
+
+.main-buttons button.lite:hover {
+    color: var(--theme-color);
+}

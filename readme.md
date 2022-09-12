@@ -1,6 +1,6 @@
 # QLYAudioPlayer-Demo
 
-![](app.png)
+![](doc/app.png)
 
 网页音乐播放器，包含歌词显示，频谱图效果等功能,
 
