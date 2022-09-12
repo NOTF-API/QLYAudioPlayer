@@ -1,4 +1,4 @@
-# QLYAudioPlayer-Demo
+# QLYAudioPlayer网页播放器
 
 ![](doc/app.png)
 
