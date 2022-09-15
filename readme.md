@@ -1,5 +1,5 @@
 # QLYAudioPlayer网页播放器
-
+目前已经使用Vue3重构了该项目，链接: (NOTF-API/qlyplayer-vue)[https://github.com/NOTF-API/qlyplayer-vue]
 ![](doc/app.png)
 
 网页音乐播放器，包含歌词显示，频谱图效果等功能,
